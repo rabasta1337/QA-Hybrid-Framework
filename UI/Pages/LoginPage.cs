@@ -17,6 +17,7 @@ namespace QA_Hybrid_Framework.UI.Pages
         private IWebElement UsernameField => _driver.FindElement(By.Id("user-name"));
         private IWebElement PasswordField => _driver.FindElement(By.Id("password"));
         private IWebElement LoginButton => _driver.FindElement(By.Id("login-button"));
+        private IWebElement ErrorContainer => _driver.FindElement(By.CssSelector("[data-set='error']"));
 
         public void LoginUser(string username, string password)
         {
@@ -26,6 +27,11 @@ namespace QA_Hybrid_Framework.UI.Pages
             UsernameField.SendKeys(username);
             PasswordField.SendKeys(password);
             LoginButton.Click();
+        }
+
+        public string GetErrorMessage()
+        {
+            return ErrorContainer.Text;
         }
     }
 }
