@@ -12,6 +12,7 @@ namespace QA_Hybrid_Framework.UI
         public static IWebElement WaitForElementVisible(IWebDriver driver, By locator, int timeoutSeconds = 10)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds));
+            // Odpytuje DOM co 500ms  zwraca element gdy Displayed == true, w przeciwnym razie zwraca null i ponawia próbę
             return wait.Until(d =>
             {
                 var element = d.FindElement(locator);
@@ -22,6 +23,7 @@ namespace QA_Hybrid_Framework.UI
         public static IWebElement WaitForElementClickable(IWebDriver driver, By locator, int timeoutSeconds = 10)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds));
+            // Zwraca element tylko gdy jest w pełni interaktywny dla użytkownika
             return wait.Until(d =>
             {
                 var element = d.FindElement(locator);

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace QA_Hybrid_Framework.API.Models
 {
+    // Model DTO (Data Transfer Object) reprezentujący strukturę odpowiedzi JSON 
     public class CreateUserResponse
     {
         public string Name { get; set; } = null!;

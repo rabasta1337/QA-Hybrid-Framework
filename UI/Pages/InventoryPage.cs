@@ -52,6 +52,7 @@ namespace QA_Hybrid_Framework.UI.Pages
             {
                 string cleanText = element.Text.Replace("$", "").Trim();
 
+                // Bezpieczne parsowanie z uwzględnieniem kropki (InvariantCulture) i w locie przerzucenie do zmiennej price bo samo tryparse to bool
                 if (decimal.TryParse(cleanText, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out decimal price))
                 {
                     prices.Add(price);

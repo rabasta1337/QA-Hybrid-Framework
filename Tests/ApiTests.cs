@@ -6,14 +6,14 @@ using System.Text;
 
 namespace QA_Hybrid_Framework.Tests
 {
-    [TestFixture]
-    [Category("API")]
+    [TestFixture] //testfixture informuje nunit i test explorer ze ta klasa jest kontenerem na testy i powinna byc przeszukana pod katem metod testowych [Test]
+    [Category("API")]// kategorie taguja caly test lub klase 
     public class ApiTests
     {
         private readonly ReqResClient _apiClient = new ReqResClient();
 
         [Test]
-        [Category("Smoke")]
+        [Category("Smoke")] //testy smoke to szybkie kluczowe testy sprawdzajace ogolne dzialanie aplikacji na srodowisku 
         public void GetUsersList_ShouldReturn200OK()
         {
             var response = _apiClient.GetUsers();
@@ -22,7 +22,7 @@ namespace QA_Hybrid_Framework.Tests
         }
 
         [Test]
-        [Category("Regression")]
+        [Category("Regression")] //testy regresji to szczegolowe testy calego systemu upewniajace sie ze nowe funkcje programow nie zepsuly wczesniej dzialajacych modulow 
         public void GetUserById_ShouldReturnCorrectUser()
         {
             var response = _apiClient.GetUserById(1);
@@ -58,7 +58,7 @@ namespace QA_Hybrid_Framework.Tests
         }
 
         [Test]
-        [Category("Negative")]
+        [Category("Negative")] // testy negatywne sprawdzaja zachowane systemu w sytuacjach awaryjnych 
         public void GetNonExistingUser_ShouldReturn404NotFound()
         {
             var response = _apiClient.GetNonExistingUser();

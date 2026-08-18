@@ -14,10 +14,11 @@ namespace QA_Hybrid_Framework.UI.Pages
             _driver = driver;
         }
 
+        // => oznacza ze element jest wyszukiwany dopiero w momencie odwolania sie do niego a nie przy twoerzeniu obiekty loginpage 
         private IWebElement UsernameField => _driver.FindElement(By.Id("user-name"));
         private IWebElement PasswordField => _driver.FindElement(By.Id("password"));
         private IWebElement LoginButton => _driver.FindElement(By.Id("login-button"));
-        private IWebElement ErrorContainer => _driver.FindElement(By.CssSelector("[data-set='error']"));
+        private IWebElement ErrorContainer => _driver.FindElement(By.CssSelector("[data-test='error']"));
 
         public void LoginUser(string username, string password)
         {

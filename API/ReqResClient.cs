@@ -10,6 +10,7 @@ namespace QA_Hybrid_Framework.API
     {
         private readonly RestClient _client;
 
+        // Inicjalizacja klienta bazowego z konfiguracją adresu URL bazowego i timeoutu dla odpowiedzi
         public ReqResClient()
         {
             var options = new RestClientOptions("https://jsonplaceholder.typicode.com")
@@ -31,6 +32,7 @@ namespace QA_Hybrid_Framework.API
             return _client.Execute(request);
         }
 
+        // Utworzenie nowego użytkownika z automatyczną deserializacją odpowiedzi do DTO
         public RestResponse<CreateUserResponse> CreateUser(string name, string job)
         {
             var request = new RestRequest("/users", Method.Post);
@@ -61,7 +63,7 @@ namespace QA_Hybrid_Framework.API
 
         }
 
-        //Negative case
+        //Próba pobrania nieistniejącego zasobu pod kod 404
         public RestResponse GetNonExistingUser()
         {
             var request = new RestRequest($"/users/9999999", Method.Get);
