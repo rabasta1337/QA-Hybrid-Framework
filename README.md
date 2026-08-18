@@ -29,3 +29,5 @@ Test automation framework built with **C# (.NET)**, **Selenium WebDriver**, **Re
 * **Base64 Embedded Screenshots:** Zero external dependency HTML reports containing visual captures directly inside the DOM upon failure.
 * **Dual Screenshot Artifacts:** Automated fallback writing `.png` files directly to local storage (`C:\Tests`) on failure.
 * **CI/CD Ready Filtering:** Test categorization via NUnit `[Category]` attributes (`Smoke`, `Regression`, `Negative`, `Hybrid`, `API`, `UI`).
+
+<img width="1912" height="776" alt="image" src="https://github.com/user-attachments/assets/388d2f5f-3d00-4d5e-a21f-d4e05db9661e" />
